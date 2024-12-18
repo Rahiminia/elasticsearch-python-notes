@@ -114,7 +114,7 @@ es = Elasticsearch(url)
 - Max size is 4096
 - Elasticsearch does not automatically infer the mapping for dense vectors
 
-> **Note**  
+> [!NOTE]  
 > By default, Elasticseach creates two data types for **strings**. the **text** type and the **keyword** type.  
 > with **text** we can search for individual words in text (*full-text search*), but with **keyword** the whole search phrase should be present (*keyword search*)
 
@@ -235,10 +235,7 @@ print(res['count'])
         index='index_name',
         id=id,
         script={
-            'source': 'ctx._source.remove("field")',
-            'params': {
-                'title': 'New title',
-            },
+            'source': 'ctx._source.remove("field")'
         }
     )
     ```
